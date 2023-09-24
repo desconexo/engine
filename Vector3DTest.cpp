@@ -2,6 +2,14 @@
 #include "doctest.h"
 #include "Vector3D.h"
 
+TEST_CASE("Create an empty Vector3D") {
+    Vector3D v = Vector3D();
+
+    CHECK(v[0] == 0);
+    CHECK(v[1] == 0);
+    CHECK(v[2] == 0);
+}
+
 TEST_CASE("Create a Vector3D") {
     Vector3D v = Vector3D(1, 2, 3);
     
