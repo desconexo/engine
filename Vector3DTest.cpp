@@ -118,3 +118,11 @@ TEST_CASE("Normalize a Vector3D") {
     CHECK(std::to_string(normalized[1]) == "0.534522");
     CHECK(std::to_string(normalized[2]) == "0.801784");
 }
+
+TEST_CASE("Get the dot product of two Vector3Ds") {
+    Vector3D v1 = Vector3D(1, 2, 3);
+    Vector3D v2 = Vector3D(4, 5, 6);
+    float dotProduct = Dot(v1, v2);
+
+    CHECK(std::to_string(dotProduct) == "32.000000");
+}
