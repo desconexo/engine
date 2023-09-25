@@ -136,3 +136,23 @@ TEST_CASE("Get the cross product of two Vector3Ds") {
     CHECK(std::to_string(crossProduct[1]) == "6.000000");
     CHECK(std::to_string(crossProduct[2]) == "-3.000000");
 }
+
+TEST_CASE("Project a Vector3D onto another Vector3D") {
+    Vector3D a = Vector3D(1, 2, 3);
+    Vector3D b = Vector3D(4, 5, 6);
+    Vector3D projected = Project(a, b);
+
+    CHECK(std::to_string(projected[0]) == "1.662338");
+    CHECK(std::to_string(projected[1]) == "2.077922");
+    CHECK(std::to_string(projected[2]) == "2.493506");
+}
+
+TEST_CASE("Reject a Vector3D from another Vector3D") {
+    Vector3D a = Vector3D(1, 2, 3);
+    Vector3D b = Vector3D(7, 13, 21);
+    Vector3D rejected = Reject(a, b);
+
+    CHECK(std::to_string(rejected[0]) == "-0.019727");
+    CHECK(std::to_string(rejected[1]) == "0.106221");
+    CHECK(std::to_string(rejected[2]) == "-0.059181");
+}
