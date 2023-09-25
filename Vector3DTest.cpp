@@ -126,3 +126,13 @@ TEST_CASE("Get the dot product of two Vector3Ds") {
 
     CHECK(std::to_string(dotProduct) == "32.000000");
 }
+
+TEST_CASE("Get the cross product of two Vector3Ds") {
+    Vector3D v1 = Vector3D(1, 2, 3);
+    Vector3D v2 = Vector3D(4, 5, 6);
+    Vector3D crossProduct = Cross(v1, v2);
+
+    CHECK(std::to_string(crossProduct[0]) == "-3.000000");
+    CHECK(std::to_string(crossProduct[1]) == "6.000000");
+    CHECK(std::to_string(crossProduct[2]) == "-3.000000");
+}
