@@ -55,3 +55,11 @@ Vector3D& Matrix3D::operator[](int i) {
 const Vector3D& Matrix3D::operator[](int i) const {
     return (*reinterpret_cast<const Vector3D *>(n[i]));
 }
+
+float Matrix3D::Determinant() const {
+    return (
+        n[0][0] * (n[1][1] * n[2][2] - n[1][2] * n[2][1]) -
+        n[0][1] * (n[1][0] * n[2][2] - n[1][2] * n[2][0]) +
+        n[0][2] * (n[1][0] * n[2][1] - n[1][1] * n[2][0])
+    );
+}

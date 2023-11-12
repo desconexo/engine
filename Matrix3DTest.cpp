@@ -132,3 +132,12 @@ TEST_CASE("Get a row from a const Matrix3D") {
     CHECK(c[2] == 9);
 }
 
+TEST_CASE("Get matrix determinant") {
+    Matrix3D M = Matrix3D(
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 9
+    );
+
+    CHECK(M.Determinant() == 0);
+}
